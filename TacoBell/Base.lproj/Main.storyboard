@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,6 +22,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AWt-pn-T9Z">
+                                <rect key="frame" x="16" y="100" width="343" height="567"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Cau-i7-NEw">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uEI-D0-Te8" customClass="HeaderView" customModule="TacoBell" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                 <subviews>
@@ -41,11 +53,16 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="uEI-D0-Te8" secondAttribute="trailing" id="84z-V4-nlg"/>
+                            <constraint firstItem="AWt-pn-T9Z" firstAttribute="top" secondItem="uEI-D0-Te8" secondAttribute="bottom" id="9fM-F8-VS0"/>
                             <constraint firstItem="uEI-D0-Te8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BWP-Ph-ikK"/>
                             <constraint firstItem="uEI-D0-Te8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="GQV-uj-vwF"/>
+                            <constraint firstItem="AWt-pn-T9Z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="MOB-mv-oeH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AWt-pn-T9Z" secondAttribute="trailing" id="nP6-hy-waU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AWt-pn-T9Z" secondAttribute="bottom" id="qH1-rd-R9z"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="AWt-pn-T9Z" id="8m1-aX-PBK"/>
                         <outlet property="headerView" destination="uEI-D0-Te8" id="w3D-rx-1y3"/>
                     </connections>
                 </viewController>
