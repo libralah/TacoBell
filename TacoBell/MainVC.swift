@@ -9,10 +9,13 @@
 import UIKit
 
 class MainVC: UIViewController {
+    @IBOutlet weak var headerView: HeaderView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        headerView.shadow()
+        
     }
 
 
